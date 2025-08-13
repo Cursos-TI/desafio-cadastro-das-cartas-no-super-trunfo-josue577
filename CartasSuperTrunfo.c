@@ -3,10 +3,10 @@
 int main () {
    char estado1 ,codigo1[4] ,nome1[50];
    int populacao1, pturistico1;
-   float area1, pib1;
+   float area1, pib1, pibpc1, dp1;
    char estado2[4] ,codigo2[4] ,nome2[50];
    int populacao2, pturistico2;
-   float area2, pib2;
+   float area2, pib2, pibpc2, dp2;
 
    printf ("digite uma letra para seu estado: \n");
    scanf ("%c", &estado1);
@@ -29,6 +29,9 @@ int main () {
    printf ("digite o numero de pontos turisticos: \n");
    scanf ("%d", &pturistico1);
 
+   dp1 = (float) area1 / populacao1;
+   pibpc1 = (float) pib1 / populacao1;
+
    printf ("carta1: \n");
    printf ("estado: %c \n", estado1);
    printf ("codigo: %s \n", codigo1);
@@ -37,6 +40,8 @@ int main () {
    printf ("Área: %.2f km² \n", area1);
    printf ("PIB: %.2f \n", pib1);
    printf ("número de pontos turísticos: %d \n", pturistico1);
+   printf ("Densidade Populacional: %.2f \n", dp1);
+   printf ("PIB per Capita: %.2f \n", pibpc1);
 
    printf ("agora para a carta 2 digite uma letra para seu estado: \n");
    scanf ("%s", estado2);
@@ -59,7 +64,8 @@ int main () {
    printf ("digite o numero de pontos turisticos: \n");
    scanf ("%d", &pturistico2);
 
-   
+   dp2 = (float) area2 / populacao2;
+   pibpc2 = (float) pib2 / populacao2;
 
    printf ("carta2: \n");
    printf ("estado: %s \n", estado2);
@@ -69,7 +75,8 @@ int main () {
    printf ("Área: %.2f km² \n", area2);
    printf ("PIB: %.2f \n", pib2);
    printf ("número de pontos turísticos: %d \n", pturistico2);
-
+   printf ("Densidade Populacional: %.2f \n", dp2);
+   printf ("PIB per Capita: %.2f \n", pibpc2);
 
 
 return 0;
