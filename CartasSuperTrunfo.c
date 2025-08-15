@@ -2,11 +2,15 @@
   
 int main () {
    char estado1 ,codigo1[4] ,nome1[50];
-   int populacao1, pturistico1;
-   float area1, pib1, pibpc1, dp1;
+   int pturistico1;
+   unsigned long int populacao1;
+   float area1, pib1, pibpc1, dp1, superpoder1;
    char estado2[4] ,codigo2[4] ,nome2[50];
    int populacao2, pturistico2;
-   float area2, pib2, pibpc2, dp2;
+   float area2, pib2, pibpc2, dp2, superpoder2;
+
+   int r1, r2, r3, r4, r5, r6, r7;
+   
 
    printf ("digite uma letra para seu estado: \n");
    scanf ("%c", &estado1);
@@ -31,17 +35,19 @@ int main () {
 
    dp1 = (float) area1 / populacao1;
    pibpc1 = (float) pib1 / populacao1;
+   superpoder1 = (float) area1 + pib1 + populacao1 + pturistico1 + pibpc1 - dp1;
 
    printf ("carta1: \n");
    printf ("estado: %c \n", estado1);
    printf ("codigo: %s \n", codigo1);
    printf ("nome da cidade: %s \n", nome1);
-   printf ("população: %d \n", populacao1);
+   printf ("população: %u \n", populacao1);
    printf ("Área: %.2f km² \n", area1);
    printf ("PIB: %.2f \n", pib1);
    printf ("número de pontos turísticos: %d \n", pturistico1);
    printf ("Densidade Populacional: %.2f \n", dp1);
    printf ("PIB per Capita: %.2f \n", pibpc1);
+   printf ("super poder da carta: %.2f \n", superpoder1);
 
    printf ("agora para a carta 2 digite uma letra para seu estado: \n");
    scanf ("%s", estado2);
@@ -66,6 +72,7 @@ int main () {
 
    dp2 = (float) area2 / populacao2;
    pibpc2 = (float) pib2 / populacao2;
+   superpoder2 = (float) area2 + pib2 + populacao2 + pturistico2 + pibpc2 - dp2;
 
    printf ("carta2: \n");
    printf ("estado: %s \n", estado2);
@@ -77,6 +84,24 @@ int main () {
    printf ("número de pontos turísticos: %d \n", pturistico2);
    printf ("Densidade Populacional: %.2f \n", dp2);
    printf ("PIB per Capita: %.2f \n", pibpc2);
+   printf ("Super poder da carta: %.2f \n", superpoder2);
+
+   r1 = populacao1 > populacao2 ;
+   r2 = area1 > area2 ;
+   r3 = pib1 > pib2 ;
+   r4 = pturistico1 > pturistico2 ;
+   r5 = dp1 > dp2 ;
+   r6 = pibpc1 > pibpc2 ;
+   r7 = superpoder1 > superpoder2 ;
+
+   printf ("1=carta1 0=carta2 \n");
+   printf ("População: %d venceu \n", r1);
+   printf ("Área: %d venceu \n", r2);
+   printf ("PIB: %d venceu \n", r3);
+   printf ("Pontos Turísticos: %d venceu \n", r4);
+   printf ("Dencidade populacional: %d venceu \n", r5);
+   printf ("PIB per capita: %d venceu \n", r6);
+   printf ("Super Poder: %d venceu \n", r7);
 
 
 return 0;
